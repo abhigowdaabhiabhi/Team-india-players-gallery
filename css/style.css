@@ -1,0 +1,234 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #07152c;
+    color: white;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 8%;
+    background: #061126;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+    color: #ff9933;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #ff9933;
+}
+
+.hero {
+    min-height: 440px;
+    display: flex;
+    align-items: center;
+    padding: 60px 10%;
+    background:
+      linear-gradient(90deg, #061126 15%, rgba(6,17,38,.7)),
+      url("https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=1600&q=85")
+      center/cover;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.tag {
+    color: #ff9933;
+    letter-spacing: 3px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 6vw, 65px);
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #ff9933;
+}
+
+.hero-content p:not(.tag) {
+    color: #d0d7e4;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.hero-btn {
+    display: inline-block;
+    background: #ff9933;
+    color: #07152c;
+    padding: 14px 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.players-section {
+    padding: 70px 8%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-heading h2 {
+    font-size: 34px;
+    margin-bottom: 12px;
+}
+
+.section-heading > p:last-child {
+    color: #aab7cc;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.controls input,
+.controls select {
+    padding: 13px;
+    border: 1px solid #334563;
+    border-radius: 6px;
+    background: #122440;
+    color: white;
+    min-width: 220px;
+    outline: none;
+}
+
+.player-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.player-card {
+    background: #112440;
+    border: 1px solid #263d5d;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform .3s, border-color .3s;
+}
+
+.player-card:hover {
+    transform: translateY(-8px);
+    border-color: #ff9933;
+}
+
+.player-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    object-position: center top;
+    background: #1b3555;
+    display: block;
+}
+
+.player-info {
+    padding: 18px;
+}
+
+.player-info h3 {
+    font-size: 19px;
+    margin-bottom: 9px;
+}
+
+.player-role {
+    color: #ff9933;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.jersey {
+    color: #aab7cc;
+    font-size: 13px;
+    margin-top: 9px;
+}
+
+.empty-message {
+    text-align: center;
+    padding: 30px;
+    color: #ff9933;
+}
+
+.about {
+    text-align: center;
+    padding: 60px 20px;
+    background: #102440;
+}
+
+.about h2 {
+    color: #ff9933;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.about p {
+    color: #c4cede;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #061126;
+    color: #9baac1;
+    font-size: 13px;
+}
+
+@media(max-width: 600px) {
+    .navbar {
+        padding: 18px 5%;
+    }
+
+    nav a {
+        margin-left: 10px;
+        font-size: 12px;
+    }
+
+    .controls {
+        flex-direction: column;
+    }
+
+    .controls input,
+    .controls select {
+        width: 100%;
+    }
+
+    .hero {
+        min-height: 350px;
+        padding: 40px 7%;
+    }
+}
+

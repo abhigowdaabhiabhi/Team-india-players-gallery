@@ -1,0 +1,395 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team India | Cricket Legends</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #07152c;
+    color: white;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 8%;
+    background: #061126;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+    color: #ff9933;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+nav a:hover {
+    color: #ff9933;
+}
+
+.hero {
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    padding: 60px 10%;
+    background:
+    linear-gradient(90deg, #061126, rgba(6,17,38,.65)),
+    url("https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=1600&q=85")
+    center/cover;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.tag {
+    color: #ff9933;
+    letter-spacing: 3px;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 6vw, 65px);
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.hero h1 span {
+    color: #ff9933;
+}
+
+.hero-content p {
+    color: #d0d7e4;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.hero-btn {
+    display: inline-block;
+    background: #ff9933;
+    color: #07152c;
+    padding: 14px 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.players-section {
+    padding: 65px 8%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-heading h2 {
+    font-size: 34px;
+    margin-bottom: 12px;
+}
+
+.section-heading p {
+    color: #aab7cc;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.controls input,
+.controls select {
+    padding: 13px;
+    border: 1px solid #334563;
+    border-radius: 6px;
+    background: #122440;
+    color: white;
+    min-width: 220px;
+}
+
+.player-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.player-card {
+    background: #112440;
+    border: 1px solid #263d5d;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: .3s;
+}
+
+.player-card:hover {
+    transform: translateY(-7px);
+    border-color: #ff9933;
+}
+
+.player-card img {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+    object-position: top center;
+    background: #1b3555;
+}
+
+.player-info {
+    padding: 18px;
+}
+
+.player-info h3 {
+    margin-bottom: 8px;
+}
+
+.player-role {
+    color: #ff9933;
+    font-size: 14px;
+}
+
+.jersey {
+    color: #aab7cc;
+    margin-top: 8px;
+    font-size: 13px;
+}
+
+.about {
+    text-align: center;
+    padding: 60px 20px;
+    background: #102440;
+}
+
+.about h2 {
+    color: #ff9933;
+    margin-bottom: 15px;
+}
+
+.about p {
+    color: #c4cede;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #061126;
+    color: #9baac1;
+}
+
+@media(max-width: 600px) {
+    .navbar {
+        padding: 18px 5%;
+    }
+
+    nav a {
+        margin-left: 8px;
+        font-size: 12px;
+    }
+
+    .controls {
+        flex-direction: column;
+    }
+
+    .controls input,
+    .controls select {
+        width: 100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="logo">🇮🇳 TEAM INDIA</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#players">Players</a>
+        <a href="#about">About</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <p class="tag">ONE TEAM. ONE DREAM.</p>
+        <h1>THE PRIDE OF<br><span>INDIAN CRICKET</span></h1>
+        <p>Celebrating the stars who represent India on the world stage.</p>
+        <a href="#players" class="hero-btn">EXPLORE PLAYERS</a>
+    </div>
+</section>
+
+<main id="players" class="players-section">
+
+    <div class="section-heading">
+        <p class="tag">MEET THE STARS</p>
+        <h2>Indian Cricket Players</h2>
+        <p>Explore your favourite players.</p>
+    </div>
+
+    <div class="controls">
+        <input type="text" id="searchInput"
+        placeholder="Search player name...">
+
+        <select id="roleFilter">
+            <option value="All">All Players</option>
+            <option value="Batter">Batters</option>
+            <option value="Bowler">Bowlers</option>
+            <option value="All-rounder">All-rounders</option>
+            <option value="Wicketkeeper">Wicketkeepers</option>
+        </select>
+    </div>
+
+    <div class="player-grid" id="playerGrid"></div>
+
+</main>
+
+<section class="about" id="about">
+    <h2>Bleed Blue 🇮🇳</h2>
+    <p>Celebrating the passion, dedication and achievements of Indian cricket players.</p>
+</section>
+
+<footer>
+    <p>© 2026 Team India Cricket Gallery | Fan-made project</p>
+</footer>
+
+<script>
+
+const players = [
+    {
+        name: "Virat Kohli",
+        role: "Batter",
+        jersey: 18,
+        image: "https://commons.wikimedia.org/wiki/Special:FilePath/Virat_Kohli_portrait.jpg"
+    },
+    {
+        name: "Rohit Sharma",
+        role: "Batter",
+        jersey: 45,
+        image: "https://commons.wikimedia.org/wiki/Special:FilePath/Rohit_Sharma.jpg"
+    },
+    {
+        name: "Shubman Gill",
+        role: "Batter",
+        jersey: 77,
+        image: "https://commons.wikimedia.org/wiki/Special:FilePath/Shubman_Gill.jpg"
+    },
+    {
+        name: "Jasprit Bumrah",
+        role: "Bowler",
+        jersey: 93,
+        image: "https://commons.wikimedia.org/wiki/Special:FilePath/Jasprit_Bumrah.jpg"
+    },
+    {
+        name: "Hardik Pandya",
+        role: "All-rounder",
+        jersey: 33,
+        image: "https://placehold.co/400x500/12335f/ffffff?text=Hardik+Pandya"
+    },
+    {
+        name: "Ravindra Jadeja",
+        role: "All-rounder",
+        jersey: 8,
+        image: "https://placehold.co/400x500/12335f/ffffff?text=Ravindra+Jadeja"
+    },
+    {
+        name: "KL Rahul",
+        role: "Wicketkeeper",
+        jersey: 1,
+        image: "https://placehold.co/400x500/12335f/ffffff?text=KL+Rahul"
+    },
+    {
+        name: "Rishabh Pant",
+        role: "Wicketkeeper",
+        jersey: 17,
+        image: "https://placehold.co/400x500/12335f/ffffff?text=Rishabh+Pant"
+    },
+    {
+        name: "Suryakumar Yadav",
+        role: "Batter",
+        jersey: 63,
+        image: "https://placehold.co/400x500/12335f/ffffff?text=Suryakumar+Yadav"
+    },
+    {
+        name: "Kuldeep Yadav",
+        role: "Bowler",
+        jersey: 23,
+        image: "https://placehold.co/400x500/12335f/ffffff?text=Kuldeep+Yadav"
+    }
+];
+
+
+const grid = document.getElementById("playerGrid");
+const search = document.getElementById("searchInput");
+const filter = document.getElementById("roleFilter");
+
+function displayPlayers() {
+
+    const keyword = search.value.toLowerCase().trim();
+    const selectedRole = filter.value;
+
+    const filtered = players.filter(player =>
+        player.name.toLowerCase().includes(keyword) &&
+        (selectedRole === "All" || player.role === selectedRole)
+    );
+
+    grid.innerHTML = "";
+
+    filtered.forEach(player => {
+
+        const card = document.createElement("div");
+        card.className = "player-card";
+
+        const img = document.createElement("img");
+        img.src = player.image;
+        img.alt = player.name;
+
+        const info = document.createElement("div");
+        info.className = "player-info";
+
+        info.innerHTML = `
+            <h3>${player.name}</h3>
+            <p class="player-role">${player.role}</p>
+            <p class="jersey">
+                Jersey Number: ${player.jersey}
+            </p>
+        `;
+
+        card.append(img, info);
+        grid.appendChild(card);
+    });
+}
+
+search.addEventListener("input", displayPlayers);
+filter.addEventListener("change", displayPlayers);
+
+// Load all players when website opens
+displayPlayers();
+
+</script>
+
+
+
+</body>
+</html>
+
